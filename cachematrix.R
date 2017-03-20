@@ -5,7 +5,8 @@
 ## input matrix when passed to the cacheSolve function.
 ## This means that if a specific output of cacheSolve is rerun with
 ## cacheSolve, the cached inverse matrix will be returned along
-## with the message "getting cached data", and the computation is skipped.
+## with the message "getting inversed matrix from cache", and the 
+## computation is skipped.
 
 
 ## makeCacheMatrix takes a matrix (assumed invertible),
