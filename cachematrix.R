@@ -11,10 +11,10 @@
 ## makeCacheMatrix takes a matrix (assumed invertible),
 ## and returns a list object capable of caching its inverse.
 ## The list contains four functions which can:
-## - set the matrix (function: "set")
-## - get the matrix (function: "get")
-## - set the inverse of the matrix (function: "setsolve")
-## - get the inverse of the matrix (function: "getsolve")
+## - set the matrix (function name: "set")
+## - get the matrix (function name: "get")
+## - set the inverse of the matrix (function name: "setsolve")
+## - get the inverse of the matrix (function name: "getsolve")
 
 makeCacheMatrix <- function(x = matrix()) {
   s <- NULL
