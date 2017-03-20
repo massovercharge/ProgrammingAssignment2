@@ -13,8 +13,8 @@
 ## The list contains four functions which can:
 ## - set the matrix (function: "set")
 ## - get the matrix (function: "get")
-## - set the inverse of the matrix (function: "setinverse")
-## - get the inverse of the matrix (function: "getinverse")
+## - set the inverse of the matrix (function: "setsolve")
+## - get the inverse of the matrix (function: "getsolve")
 
 makeCacheMatrix <- function(x = matrix()) {
   s <- NULL
@@ -23,11 +23,11 @@ makeCacheMatrix <- function(x = matrix()) {
     s <<- NULL
   }
   get <- function() x
-  setinverse <- function(solve) s <<- solve
-  getinverse <- function() s
+  setsolve <- function(solve) s <<- solve
+  getsolve <- function() s
   list(set = set, get = get,
-       setinverse = setinverse,
-       getinverse = getinverse)
+       setsolve = setsolve,
+       getsolve = getsolve)
 }
 
 
@@ -38,14 +38,14 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-  s <- x$getinverse()
+  s <- x$getsolve()
   if(!is.null(s)){
     message("getting cached data")
     return(s)
   }
   data <- x$get()
   s <- solve(data, ...)
-  x$setinverse(s)
+  x$setsolve(s)
   s
 }
 
